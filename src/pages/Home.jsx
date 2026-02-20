@@ -184,12 +184,19 @@ export default function Home() {
 
       <main className="grid-layout">
         <div className="card">
-          <h3 style={{ marginBottom: '1rem' }}>IP & Geolocation</h3>
+          <h3 style={{ marginBottom: '1.5rem' }}>IP & Geolocation</h3>
 
           {displayGeo ? (
             <>
-              <pre className="pre-code">{JSON.stringify(displayGeo, null, 2)}</pre>
-              <div style={{ marginTop: '0.75rem' }}>
+              <div className="info-grid">
+                {Object.entries(displayGeo).map(([key, value]) => (
+                  <div key={key} className="info-item">
+                    <div className="info-label">{key.replace(/_/g, " ")}</div>
+                    <div className="info-value">{String(value)}</div>
+                  </div>
+                ))}
+              </div>
+              <div>
                 <GeoMap geo={geo} />
               </div>
             </>
