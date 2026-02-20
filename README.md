@@ -1,4 +1,4 @@
-# JLab Web - Geo-Location Tracker
+# JLabs Exam – Frontend (Geo-Location Tracker)
 
 This is a React-based web application that allows users to track their IP geolocation, search for other IP addresses, visualize locations on a map, and maintain a search history.
 
@@ -20,10 +20,18 @@ This is a React-based web application that allows users to track their IP geoloc
 - **Maps:** Leaflet, React Leaflet
 - **Styling:** CSS Modules / Inline Styles
 
+## Environment
+
+Tested using:
+
+- Node.js v23
+- npm v10+
+
+
 ## Prerequisites
 
 - Node.js (v18 or higher recommended)
-- npm or yarn
+- npm v10+
 
 ## Installation
 
@@ -94,6 +102,11 @@ npm run lint
 - `src/components`: Reusable UI components (`GeoMap.jsx`).
 - `src/lib`: Utility functions and API configuration (`api.js`, `auth.js`).
 - `public`: Static assets.
+
+
+## Author
+
+- [EJARNAD0](https://github.com/EJARNAD0)
 
 ## License
 
