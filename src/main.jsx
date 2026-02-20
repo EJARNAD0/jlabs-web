@@ -1,5 +1,6 @@
 import "leaflet/dist/leaflet.css";
 import "./lib/leafletIconFix";
+import "./index.css"; // Added global styles
 
 import React from "react";
 import ReactDOM from "react-dom/client";
