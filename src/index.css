@@ -1,14 +1,19 @@
 :root {
-  --primary-color: #4f46e5; /* Indigo 600 */
-  --primary-hover: #4338ca; /* Indigo 700 */
-  --bg-color: #f8fafc; /* Slate 50 */
-  --card-bg: #ffffff;
-  --text-main: #0f172a; /* Slate 900 */
-  --text-muted: #64748b; /* Slate 500 */
-  --border-color: #e2e8f0; /* Slate 200 */
-  --error-bg: #fef2f2;
-  --error-border: #fecaca;
-  --error-text: #ef4444;
+  --primary-color: #4F46E5; /* Indigo */
+  --primary-hover: #4338CA; /* Indigo Hover */
+  --bg-color: #F8FAFC; /* Background */
+  --card-bg: #FFFFFF; /* Card */
+  --text-main: #111827; /* Text Primary */
+  --text-muted: #6B7280; /* Text Secondary */
+  --border-color: #E5E7EB; /* Border */
+  --danger-color: #EF4444; /* Danger */
+  --success-color: #10B981; /* Success */
+
+  /* Derived/Auxiliary */
+  --error-bg: #FEF2F2;
+  --error-border: #FECACA;
+  --error-text: var(--danger-color);
+
   --radius: 0.75rem;
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -29,10 +34,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.025em;
+  color: var(--text-main);
 }
 
 p {
   margin: 0;
+  color: var(--text-muted);
 }
 
 /* Layout Utilities */
@@ -102,14 +109,14 @@ p {
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background-color: #f8fafc;
-  border-color: #cbd5e1;
+  background-color: #f9fafb;
+  border-color: #d1d5db; /* Slightly darker border on hover */
 }
 
 .btn-danger {
   background-color: var(--error-bg);
   border-color: var(--error-border);
-  color: var(--error-text);
+  color: var(--danger-color);
 }
 
 .btn-danger:hover:not(:disabled) {
@@ -127,11 +134,16 @@ p {
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
   box-sizing: border-box;
+  color: var(--text-main);
 }
 
 .input-field:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.input-field::placeholder {
+  color: #9ca3af; /* Gray 400 */
 }
 
 .label {
@@ -159,7 +171,7 @@ p {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  background: var(--bg-color); /* Updated to match user request */
 }
 
 .login-card {
@@ -209,7 +221,7 @@ p {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  background-color: #f8fafc;
+  background-color: #f9fafb; /* Light background for items */
   border-radius: var(--radius);
   border: 1px solid var(--border-color);
   transition: transform 0.2s, box-shadow 0.2s;
@@ -264,7 +276,7 @@ p {
 
 .history-btn:hover:not(:disabled) {
   border-color: var(--primary-color);
-  background-color: #f8fafc;
+  background-color: #f9fafb;
   transform: translateX(2px);
 }
 
