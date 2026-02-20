@@ -30,7 +30,7 @@ This is a React-based web application that allows users to track their IP geoloc
 1.  **Clone the repository:**
 
     ```bash
-    git clone <https://github.com/EJARNAD0/jlabs-web.git>
+    git clone https://github.com/EJARNAD0/jlabs-web.git
     cd jlabs-web
     ```
 
