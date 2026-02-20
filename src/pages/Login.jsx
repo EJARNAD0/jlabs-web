@@ -27,20 +27,20 @@ export default function Login() {
   }
 
   return (
-    <div style={styles.shell}>
-      <div style={styles.card}>
-        <h2 style={{ marginTop: 0 }}>JLabs Exam</h2>
-        <p style={{ marginTop: 6, color: "#666" }}>
+    <div className="login-shell">
+      <div className="card login-card">
+        <h2 style={{ marginBottom: "0.5rem" }}>JLabs Exam</h2>
+        <p style={{ marginBottom: "1.5rem", color: "var(--text-muted)" }}>
           Login using seeded credentials.
         </p>
 
-        {error && <div style={styles.error}>{error}</div>}
+        {error && <div className="error-message">{error}</div>}
 
-        <form onSubmit={submit} style={{ display: "grid", gap: 12 }}>
-          <label style={styles.label}>
+        <form onSubmit={submit} className="login-form">
+          <label className="label">
             Email
             <input
-              style={styles.input}
+              className="input-field"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -48,10 +48,10 @@ export default function Login() {
             />
           </label>
 
-          <label style={styles.label}>
+          <label className="label">
             Password
             <input
-              style={styles.input}
+              className="input-field"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -59,58 +59,26 @@ export default function Login() {
             />
           </label>
 
-          <button style={styles.btn} disabled={loading}>
+          <button
+            className="btn btn-primary"
+            style={{ marginTop: "0.5rem" }}
+            disabled={loading}
+          >
             {loading ? "Signing in..." : "Sign in"}
           </button>
         </form>
 
-        <div style={{ marginTop: 12, fontSize: 12, color: "#888" }}>
+        <div
+          style={{
+            marginTop: "1.5rem",
+            fontSize: "0.75rem",
+            color: "var(--text-muted)",
+            textAlign: "center",
+          }}
+        >
           Default: ej@jlabs.test / password123
         </div>
       </div>
     </div>
   );
 }
-
-const styles = {
-  shell: {
-    minHeight: "100vh",
-    display: "grid",
-    placeItems: "center",
-    padding: 16,
-    fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Arial",
-    background: "#fafafa",
-  },
-  card: {
-    width: "100%",
-    maxWidth: 420,
-    background: "white",
-    border: "1px solid #eee",
-    borderRadius: 14,
-    padding: 18,
-    boxShadow: "0 4px 18px rgba(0,0,0,0.06)",
-  },
-  label: { display: "grid", gap: 6, fontSize: 14 },
-  input: {
-    padding: 12,
-    borderRadius: 10,
-    border: "1px solid #ddd",
-    outline: "none",
-  },
-  btn: {
-    padding: 12,
-    borderRadius: 10,
-    border: "none",
-    cursor: "pointer",
-    background: "#111",
-    color: "white",
-    fontWeight: 600,
-  },
-  error: {
-    background: "#ffe5e5",
-    border: "1px solid #ffcccc",
-    padding: 10,
-    borderRadius: 10,
-    margin: "12px 0",
-  },
-};

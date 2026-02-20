@@ -22,7 +22,7 @@ export default function GeoMap({ geo }) {
   const zoom = coords ? 11 : 5;
 
   return (
-    <div style={{ height: 360, borderRadius: 12, overflow: "hidden", border: "1px solid #eee" }}>
+    <div className="map-container">
       <MapContainer
         center={center}
         zoom={zoom}
@@ -30,7 +30,7 @@ export default function GeoMap({ geo }) {
         style={{ height: "100%", width: "100%" }}
       >
         <TileLayer
-          attribution='&copy; OpenStreetMap contributors'
+          attribution="&copy; OpenStreetMap contributors"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
@@ -40,12 +40,19 @@ export default function GeoMap({ geo }) {
         {coords && (
           <Marker position={[coords.lat, coords.lng]}>
             <Popup>
-              <div style={{ fontFamily: "system-ui" }}>
-                <div style={{ fontWeight: 700 }}>{geo?.ip || "IP"}</div>
+              <div style={{ fontFamily: "var(--font-family)" }}>
+                <div style={{ fontWeight: 600 }}>{geo?.ip || "IP"}</div>
                 <div>
-                  {geo?.city || "-"}, {geo?.region || "-"}, {geo?.country || "-"}
+                  {geo?.city || "-"}, {geo?.region || "-"},{" "}
+                  {geo?.country || "-"}
                 </div>
-                <div style={{ fontSize: 12, color: "#666", marginTop: 4 }}>
+                <div
+                  style={{
+                    fontSize: "0.75rem",
+                    color: "var(--text-muted)",
+                    marginTop: "0.25rem",
+                  }}
+                >
                   {coords.lat}, {coords.lng}
                 </div>
               </div>
